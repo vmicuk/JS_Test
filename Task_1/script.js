@@ -8,3 +8,14 @@ pamatyti jo pateikto svorio kovertavimą į:
 Pastaba: atvaizdavimas turi būti matomas pateikus formą ir pateikiamas
 <div id="output"></div> viduje, bei turi turėti bent minimalų stilių;
 ------------------------------------------------------------------- */
+
+document.querySelector("form").addEventListener("submit", myFunction);
+
+function myFunction(event) {
+    event.preventDefault(); //sustabdo formos(tinklapio) perkrovima
+    const result = document.querySelector("input[id=search]").value;
+    
+    document.querySelector("h2[id=svarai]").textContent = "Svarai: " + result / 0.001 + " lb";
+    document.querySelector("h2[id=gramai]").textContent = "Gramai: " + result * 2.2046 + " g";
+    document.querySelector("h2[id=uncijos]").textContent = "Uncijos: " + result * 35.274 + " oz";
+}
